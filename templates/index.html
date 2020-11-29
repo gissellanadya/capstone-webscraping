@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-10 col-lg-8 col-sm-10">
+					<br>
+					<br>
+					<h1 class="mb-2" style="color: #3CAEA3">
+						IMDB Top 7 Films/TV Shows in 2019
+					</h1>
+					<h3 style="color: #20639B">
+						Based on the Popularity
+					</h3>
+					<h6 style="color: #2f3c79">
+						By : Gissella Nadya
+					</h6>
+					<br>
+				</div>
+			</div>
+		<div class="row">
+			<div class="col-md-4 col-lg-4 col-sm-4">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12">
+				<div class="tab">
+					<button class="tablinks" onclick="openTab(event, 'profile') " id="defaultOpen">Ratings
+					</button>
+					<button class="tablinks" onclick="openTab(event, 'Own')">Ratings and Metascores
+					</button>
+					<button class="tablinks" onclick="openTab(event, 'Own2')">Votes
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12">
+				<!-- Tab content -->
+				<div id="profile" class="tabcontent">
+					<br>
+					<h3 style="color: #333333;text-align:center">IMDB Top 7 Films/TV Shows in 2019, Ratings Received</h3>
+					<div class="img-container"">
+						{% if funded_plot != None %}
+					  <img src="data:image/png;base64,{{ plot_result }}" >
+						{% endif %}
+					</div>
+					<h5 style="color: #3d0707">Analysis</h5>
+					<h10 style="color: #3d0707" > From the plot bar above, we can see that both "The Mandalorian" and "The Boys" received the highest ratings, 
+						followed by "Wayne", then both "His Dark Materials" and "Jojo Rabbit", then "Servant" and the lowest rating which is "Dreamland".
+					</h10>
+					<h10 style="color: #3d0707"> As we compare these facts to the popularity scale, it can be seen that actually the popularity of a film 
+						does not determined whether the ratings received are the highest of them all. In this case both "The Mandalorian", which is ranking number 1, 
+						and "The Boys" that is ranking number 3 received the highest ratings. "The Boys" able to beat "His Dark Materials" which is shown as number two in the ranking. 
+					</h10>
+				</div>
+				<div id="Own" class="tabcontent">
+				  <!-- Define your own analysis for extra challange -->
+				  <br>
+				  <h3 style="color: #333333;text-align:center">IMDB Top 7 Films/TV Shows in 2019, Ratings and Metascores Received</h3>
+				  <div class="img-container"">
+					  {% if funded_plot != None %}
+					<img src="data:image/png;base64,{{ plot_baru }}" >
+					  {% endif %}
+				  </div>
+				  <h5 style="color: #3d0707">Analysis</h5>
+				  <h10 style="color: #3d0707"> 
+					Here we want to compare these Films/TV Shows on how they score for the Metascores.
+					In the plot you can see that only 2 Films receive metascores, and they are both in the range 55-60. 
+					Remember "The Mandalorian" and "The Boys, which received the highest ratings out of the other seven, 
+					they haven't received any metascores yet! Surprise Surprise!
+				</h10>
+				</div>
+				<div id="Own2" class="tabcontent">
+					<!-- Define your own analysis for extra challange -->
+					<br>
+					<h3 style="color: #333333;text-align:center">IMDB Top 7 Films/TV Shows in 2019, Votes Received</h3>
+					<div class="img-container"">
+						{% if funded_plot != None %}
+					  <img src="data:image/png;base64,{{ plot_ketiga }}" >
+						{% endif %}
+					</div>
+					<h5 style="color: #3d0707">Analysis</h5>
+					<h10 style="color: #3d0707"> 
+						On the plot above we can see how many people voted for the Films/TV Shows. 
+						It can be seen that "Jojo Rabbit" received the highest voters of them all and "Dreamland" received the least! 
+					</h10>
+					
+				  </div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript">
+function openTab(evt, idName) {
+	// Declare all variables
+	var i, tabcontent, tablinks;
+
+	// Get all elements with class="tabcontent" and hide them
+	tabcontent = document.getElementsByClassName("tabcontent");
+	for (i = 0; i < tabcontent.length; i++) {
+	tabcontent[i].style.display = "none";
+	}
+
+	// Get all elements with class="tablinks" and remove the class "active"
+	tablinks = document.getElementsByClassName("tablinks");
+	for (i = 0; i < tablinks.length; i++) {
+	tablinks[i].className = tablinks[i].className.replace(" active", "");
+	}
+
+	// Show the current tab, and add an "active" class to the button that opened the tab
+	document.getElementById(idName).style.display = "block";
+	evt.currentTarget.className += " active";
+
+
+	}
+	document.getElementById("defaultOpen").click();	
+</script>
