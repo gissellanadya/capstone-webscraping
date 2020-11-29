@@ -1,6 +1,6 @@
 # Web Scraping, Data Wrangling, and Flask Dashboard (Case Study: IMDB)
 
-Greetings all! My name is `Gissella Nadya` and this is my submission / capstone project for `Data Analysis Specialization`, specifically in Web Scraping using BeautifulSoup, Data Wrangling, and Implementing to Flask Dashboard for Algorit.ma Data Science School. I choose `IMDB` as my case study because I am passionate about Movies and TV shows. So let's start coding!
+Greetings all! My name is Gissella Nadya and this is my submission / capstone project for `Data Analysis Specialization`, specifically in Web Scraping using BeautifulSoup, Data Wrangling, and Implementing to Flask Dashboard for Algorit.ma Data Science School. I choose `IMDB` as my case study because I am passionate about Movies and TV shows. So let's start coding!
 
 ## Dependencies
 
